@@ -1,0 +1,42 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isAdmin() {
+      return firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+    
+    function isContractor() {
+      return firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.role == 'contractor';
+    }
+
+    // Issue Images
+    match /issues/{imageId} {
+      // Anyone can view issue images
+      allow read: if true;
+      
+      // Any authenticated user can upload an image (max 5MB, must be image type)
+      allow create: if isAuthenticated() 
+                   && request.resource.size < 5 * 1024 * 1024 
+                   && request.resource.contentType.matches('image/.*');
+                   
+      allow delete: if isAdmin();
+    }
+
+    // Resolution Proofs
+    match /proofs/{imageId} {
+      allow read: if true;
+      
+      // Only contractors or admins can upload proofs
+      allow create: if (isContractor() || isAdmin())
+                   && request.resource.size < 5 * 1024 * 1024 
+                   && request.resource.contentType.matches('image/.*');
+                   
+      allow delete: if isAdmin();
+    }
+  }
+}

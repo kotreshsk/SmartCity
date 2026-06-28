@@ -1,0 +1,57 @@
+[debug] [2026-06-28T12:25:52.407Z] ----------------------------------------------------------------------
+[debug] [2026-06-28T12:25:52.410Z] Command:       /usr/local/bin/node /Users/kotresh/.npm/_npx/7750544ccf494d8b/node_modules/.bin/firebase deploy --non-interactive
+[debug] [2026-06-28T12:25:52.410Z] CLI Version:   15.22.3
+[debug] [2026-06-28T12:25:52.410Z] Platform:      darwin
+[debug] [2026-06-28T12:25:52.410Z] Node Version:  v24.11.1
+[debug] [2026-06-28T12:25:52.410Z] Detected Agent: antigravity
+[debug] [2026-06-28T12:25:52.410Z] Time:          Sun Jun 28 2026 17:55:52 GMT+0530 (India Standard Time)
+[debug] [2026-06-28T12:25:52.410Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-06-28T12:25:53.446Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-06-28T12:25:53.446Z] > authorizing via signed-in user (kotreshsk1116@gmail.com)
+[debug] [2026-06-28T12:25:53.446Z] [iam] checking project smartcity-af511 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2026-06-28T12:25:53.447Z] Checked if tokens are valid: false, expires at: 1782640337605
+[debug] [2026-06-28T12:25:53.447Z] Checked if tokens are valid: false, expires at: 1782640337605
+[debug] [2026-06-28T12:25:53.447Z] > refreshing access token with scopes: []
+[debug] [2026-06-28T12:25:53.449Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-06-28T12:25:53.449Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-06-28T12:25:53.638Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-06-28T12:25:53.638Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-06-28T12:25:53.656Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/smartcity-af511:testIamPermissions [none]
+[debug] [2026-06-28T12:25:53.656Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/smartcity-af511:testIamPermissions  x-goog-user-project=smartcity-af511
+[debug] [2026-06-28T12:25:53.656Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/smartcity-af511:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2026-06-28T12:25:54.998Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/smartcity-af511:testIamPermissions 200
+[debug] [2026-06-28T12:25:54.999Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/smartcity-af511:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2026-06-28T12:25:54.999Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T12:25:54.999Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T12:25:54.999Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/smartcity-af511/serviceAccounts/smartcity-af511@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2026-06-28T12:25:54.999Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/smartcity-af511/serviceAccounts/smartcity-af511@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2026-06-28T12:25:56.709Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/smartcity-af511/serviceAccounts/smartcity-af511@appspot.gserviceaccount.com:testIamPermissions 404
+[debug] [2026-06-28T12:25:56.709Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/smartcity-af511/serviceAccounts/smartcity-af511@appspot.gserviceaccount.com:testIamPermissions {"error":{"code":404,"message":"Unknown service account","status":"NOT_FOUND"}}
+[debug] [2026-06-28T12:25:56.710Z] [functions] service account IAM check errored, deploy may fail: Request to https://iam.googleapis.com/v1/projects/smartcity-af511/serviceAccounts/smartcity-af511@appspot.gserviceaccount.com:testIamPermissions had HTTP Error: 404, Unknown service account {"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":404,"message":"Unknown service account","status":"NOT_FOUND"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://iam.googleapis.com/v1/projects/smartcity-af511/serviceAccounts/smartcity-af511@appspot.gserviceaccount.com:testIamPermissions had HTTP Error: 404, Unknown service account","status":404}
+[debug] [2026-06-28T12:25:56.710Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T12:25:56.710Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T12:25:56.711Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/smartcity-af511 [none]
+[debug] [2026-06-28T12:25:57.169Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/smartcity-af511 200
+[debug] [2026-06-28T12:25:57.170Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/smartcity-af511 {"projectId":"smartcity-af511","projectNumber":"417538539443","displayName":"SmartCity","name":"projects/smartcity-af511","resources":{"hostingSite":"smartcity-af511"},"state":"ACTIVE","etag":"1_b2309614-70a8-4c4e-838e-98e17debf7a6"}
+[info] 
+[info] === Deploying to 'smartcity-af511'...
+[info] 
+[info] i  deploying storage, firestore, functions, hosting 
+[info] i  storage: ensuring required API firebasestorage.googleapis.com is enabled... 
+[debug] [2026-06-28T12:25:57.174Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T12:25:57.174Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T12:25:57.174Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/smartcity-af511/services/firebasestorage.googleapis.com [none]
+[debug] [2026-06-28T12:25:57.174Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/smartcity-af511/services/firebasestorage.googleapis.com  x-goog-user-project=smartcity-af511
+[debug] [2026-06-28T12:25:58.937Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/smartcity-af511/services/firebasestorage.googleapis.com 200
+[debug] [2026-06-28T12:25:58.937Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/smartcity-af511/services/firebasestorage.googleapis.com [omitted]
+[warn] ⚠  storage: missing required API firebasestorage.googleapis.com. Enabling now... 
+[debug] [2026-06-28T12:25:58.939Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T12:25:58.939Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T12:25:58.940Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/smartcity-af511/services/firebasestorage.googleapis.com:enable [none]
+[debug] [2026-06-28T12:25:58.940Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/smartcity-af511/services/firebasestorage.googleapis.com:enable  x-goog-user-project=smartcity-af511
+[debug] [2026-06-28T12:25:59.440Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/smartcity-af511/services/firebasestorage.googleapis.com:enable 200
+[debug] [2026-06-28T12:25:59.441Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/smartcity-af511/services/firebasestorage.googleapis.com:enable [omitted]
+[debug] [2026-06-28T12:26:09.470Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T12:26:09.471Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T12:26:09.472Z] >>> [apiv2][query] GET https://firebasestorage.googleapis.com/v1alpha/projects/smartcity-af511/defaultBucket [none]

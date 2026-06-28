@@ -18,4 +18,4 @@ const SLAMetrics = () => {
   );
 };
 
-export default SLATimer;
+export default SLAMetrics;

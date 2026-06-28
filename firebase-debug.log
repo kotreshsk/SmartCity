@@ -1,0 +1,100 @@
+[debug] [2026-06-28T13:05:13.508Z] ----------------------------------------------------------------------
+[debug] [2026-06-28T13:05:13.510Z] Command:       /usr/local/bin/node /Users/kotresh/.npm/_npx/7750544ccf494d8b/node_modules/.bin/firebase deploy --only hosting --non-interactive
+[debug] [2026-06-28T13:05:13.510Z] CLI Version:   15.22.3
+[debug] [2026-06-28T13:05:13.510Z] Platform:      darwin
+[debug] [2026-06-28T13:05:13.510Z] Node Version:  v24.11.1
+[debug] [2026-06-28T13:05:13.510Z] Detected Agent: antigravity
+[debug] [2026-06-28T13:05:13.510Z] Time:          Sun Jun 28 2026 18:35:13 GMT+0530 (India Standard Time)
+[debug] [2026-06-28T13:05:13.511Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-06-28T13:05:14.525Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-06-28T13:05:14.525Z] > authorizing via signed-in user (kotreshsk1116@gmail.com)
+[debug] [2026-06-28T13:05:14.525Z] [iam] checking project smartcity-af511 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-06-28T13:05:14.526Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T13:05:14.526Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T13:05:14.527Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/smartcity-af511:testIamPermissions [none]
+[debug] [2026-06-28T13:05:14.527Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/smartcity-af511:testIamPermissions  x-goog-user-project=smartcity-af511
+[debug] [2026-06-28T13:05:14.527Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/smartcity-af511:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-06-28T13:05:15.917Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/smartcity-af511:testIamPermissions 200
+[debug] [2026-06-28T13:05:15.918Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/smartcity-af511:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-06-28T13:05:15.918Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T13:05:15.918Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T13:05:15.918Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/smartcity-af511 [none]
+[debug] [2026-06-28T13:05:16.580Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/smartcity-af511 200
+[debug] [2026-06-28T13:05:16.580Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/smartcity-af511 {"projectId":"smartcity-af511","projectNumber":"417538539443","displayName":"SmartCity","name":"projects/smartcity-af511","resources":{"hostingSite":"smartcity-af511"},"state":"ACTIVE","etag":"1_7b8ba096-3eeb-4eb6-b78d-11beaddfd0f7"}
+[info] 
+[info] === Deploying to 'smartcity-af511'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-06-28T13:05:16.582Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T13:05:16.582Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T13:05:16.582Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/smartcity-af511/sites/smartcity-af511 [none]
+[debug] [2026-06-28T13:05:17.905Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/smartcity-af511/sites/smartcity-af511 200
+[debug] [2026-06-28T13:05:17.905Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/smartcity-af511/sites/smartcity-af511 {"name":"projects/smartcity-af511/sites/smartcity-af511","defaultUrl":"https://smartcity-af511.web.app","appId":"1:417538539443:web:84a74c1356a7d0eea695c6","type":"DEFAULT_SITE"}
+[debug] [2026-06-28T13:05:17.908Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T13:05:17.908Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T13:05:17.908Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/smartcity-af511/versions [none]
+[debug] [2026-06-28T13:05:17.908Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/smartcity-af511/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-06-28T13:05:19.230Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/smartcity-af511/versions 200
+[debug] [2026-06-28T13:05:19.231Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/smartcity-af511/versions {"name":"projects/417538539443/sites/smartcity-af511/versions/b9101ccaccf26d4a","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[smartcity-af511]: beginning deploy... 
+[info] i  hosting[smartcity-af511]: found 8 files in dist 
+[debug] [2026-06-28T13:05:19.249Z] [hosting] uploading with 200 concurrency
+[debug] [2026-06-28T13:05:19.326Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T13:05:19.326Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T13:05:19.327Z] [hosting] hash cache [ZGlzdA] stored for 8 files
+[debug] [2026-06-28T13:05:19.327Z] [hosting][hash queue][FINAL] {"max":74,"min":4,"avg":13.375,"active":0,"complete":8,"success":8,"errored":0,"retried":0,"total":8,"elapsed":77}
+[debug] [2026-06-28T13:05:19.327Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/417538539443/sites/smartcity-af511/versions/b9101ccaccf26d4a:populateFiles [none]
+[debug] [2026-06-28T13:05:19.327Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/417538539443/sites/smartcity-af511/versions/b9101ccaccf26d4a:populateFiles {"files":{"/sw.js":"d7d2bb321f3243b6c6ef977427c07b45799bf256a218345a73d7dc2188fb0108","/index.html":"360aa92d45563cd55b53dfe286b7fc7b89fb8b85ece471ff537ad37d11d244fc","/registerSW.js":"5b6445b5215737c53ef0d379c151d57de165a056de2d1c5812ed614f158ebcbd","/assets/index-D23ulU7c.css":"76826cc73c3f1652ca9234fb023ac066c3b742e03f73a01fe8ebf3deaa2d244e","/manifest.json":"307051ab177e9d58ba2e16eaa1547a22edec79e99dcdba73fe615c07a22f4956","/manifest.webmanifest":"046047be3e4bb17706d4c1f850c9c5de037e94babbc397499b48bd93e7aa4bba","/workbox-9c191d2f.js":"2881068d9d06ca73c281022d69d37ca52b840c5b7f9e82cea3763a92388b6656","/assets/index-Y2MlW14h.js":"a8139190f2b1feb044cdc8f82f16e39baeb40296807ab619dcd41ca7add4660a"}}
+[debug] [2026-06-28T13:05:20.028Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/417538539443/sites/smartcity-af511/versions/b9101ccaccf26d4a:populateFiles 200
+[debug] [2026-06-28T13:05:20.029Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/417538539443/sites/smartcity-af511/versions/b9101ccaccf26d4a:populateFiles {"uploadRequiredHashes":["a8139190f2b1feb044cdc8f82f16e39baeb40296807ab619dcd41ca7add4660a","d7d2bb321f3243b6c6ef977427c07b45799bf256a218345a73d7dc2188fb0108","360aa92d45563cd55b53dfe286b7fc7b89fb8b85ece471ff537ad37d11d244fc"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/smartcity-af511/versions/b9101ccaccf26d4a/files"}
+[debug] [2026-06-28T13:05:20.030Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T13:05:20.030Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T13:05:20.030Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T13:05:20.031Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T13:05:20.031Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T13:05:20.031Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T13:05:20.031Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartcity-af511/versions/b9101ccaccf26d4a/files/a8139190f2b1feb044cdc8f82f16e39baeb40296807ab619dcd41ca7add4660a [none]
+[debug] [2026-06-28T13:05:20.031Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartcity-af511/versions/b9101ccaccf26d4a/files/a8139190f2b1feb044cdc8f82f16e39baeb40296807ab619dcd41ca7add4660a [stream]
+[debug] [2026-06-28T13:05:20.033Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartcity-af511/versions/b9101ccaccf26d4a/files/d7d2bb321f3243b6c6ef977427c07b45799bf256a218345a73d7dc2188fb0108 [none]
+[debug] [2026-06-28T13:05:20.033Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartcity-af511/versions/b9101ccaccf26d4a/files/d7d2bb321f3243b6c6ef977427c07b45799bf256a218345a73d7dc2188fb0108 [stream]
+[debug] [2026-06-28T13:05:20.034Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartcity-af511/versions/b9101ccaccf26d4a/files/360aa92d45563cd55b53dfe286b7fc7b89fb8b85ece471ff537ad37d11d244fc [none]
+[debug] [2026-06-28T13:05:20.034Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartcity-af511/versions/b9101ccaccf26d4a/files/360aa92d45563cd55b53dfe286b7fc7b89fb8b85ece471ff537ad37d11d244fc [stream]
+[debug] [2026-06-28T13:05:20.036Z] [hosting][populate queue][FINAL] {"max":705,"min":705,"avg":705,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":710}
+[debug] [2026-06-28T13:05:20.036Z] [hosting] uploads queued: 3
+[info] i  hosting: uploading new files [0/3] (0%) 
+[debug] [2026-06-28T13:05:21.489Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartcity-af511/versions/b9101ccaccf26d4a/files/360aa92d45563cd55b53dfe286b7fc7b89fb8b85ece471ff537ad37d11d244fc 200
+[debug] [2026-06-28T13:05:21.489Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartcity-af511/versions/b9101ccaccf26d4a/files/360aa92d45563cd55b53dfe286b7fc7b89fb8b85ece471ff537ad37d11d244fc [stream]
+[debug] [2026-06-28T13:05:21.514Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartcity-af511/versions/b9101ccaccf26d4a/files/d7d2bb321f3243b6c6ef977427c07b45799bf256a218345a73d7dc2188fb0108 200
+[debug] [2026-06-28T13:05:21.514Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartcity-af511/versions/b9101ccaccf26d4a/files/d7d2bb321f3243b6c6ef977427c07b45799bf256a218345a73d7dc2188fb0108 [stream]
+[debug] [2026-06-28T13:05:21.948Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartcity-af511/versions/b9101ccaccf26d4a/files/a8139190f2b1feb044cdc8f82f16e39baeb40296807ab619dcd41ca7add4660a 200
+[debug] [2026-06-28T13:05:21.948Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartcity-af511/versions/b9101ccaccf26d4a/files/a8139190f2b1feb044cdc8f82f16e39baeb40296807ab619dcd41ca7add4660a [stream]
+[debug] [2026-06-28T13:05:21.948Z] [hosting][upload queue][FINAL] {"max":1919,"min":1458,"avg":1620.3333333333333,"active":0,"complete":3,"success":3,"errored":0,"retried":0,"total":3,"elapsed":1919}
+[info] i  hosting: upload complete 
+[info] ✔  hosting[smartcity-af511]: file upload complete 
+[debug] [2026-06-28T13:05:21.949Z] [hosting] deploy completed after 2713ms
+[debug] [2026-06-28T13:05:21.949Z] [
+  {
+    "config": {
+      "public": "dist",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "smartcity-af511"
+    },
+    "version": "projects/417538539443/sites/smartcity-af511/versions/b9101ccaccf26d4a"
+  }
+]
+[info] i  hosting[smartcity-af511]: finalizing version... 
+[debug] [2026-06-28T13:05:21.951Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T13:05:21.951Z] Checked if tokens are valid: true, expires at: 1782653152638
+[debug] [2026-06-28T13:05:21.951Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/smartcity-af511/versions/b9101ccaccf26d4a updateMask=status%2Cconfig
+[debug] [2026-06-28T13:05:21.951Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/smartcity-af511/versions/b9101ccaccf26d4a {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}

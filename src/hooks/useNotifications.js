@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { requestNotificationPermission, onMessageListener } from '../services/notificationService';
 import { useAuth } from './useAuth';
 
 export const useNotifications = () => {
   const { user } = useAuth();
+  const [unreadCount, setUnreadCount] = useState(0);
 
   useEffect(() => {
     if (user?.uid) {
@@ -18,7 +19,7 @@ export const useNotifications = () => {
         if (payload) {
           // Display a toast or handle the notification foreground event
           console.log("Foreground notification received:", payload);
-          // E.g. add to a toast context
+          setUnreadCount(prev => prev + 1);
         }
       } catch (err) {
         console.error("Notification listener error:", err);
@@ -27,4 +28,6 @@ export const useNotifications = () => {
     
     listen();
   }, []);
+
+  return { unreadCount };
 };

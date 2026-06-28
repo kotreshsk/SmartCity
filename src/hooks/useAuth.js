@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { auth, db } from '../config/firebase';
-import { RecaptchaVerifier, signInWithPhoneNumber, signOut, onAuthStateChanged } from 'firebase/auth';
+import { RecaptchaVerifier, signInWithPhoneNumber, signOut, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
 
 export const useAuth = () => {
@@ -80,11 +80,61 @@ export const useAuth = () => {
     }
   };
 
+  const login = async (email, password) => {
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const register = async (email, password, name, role) => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      const userRef = doc(db, 'users', user.uid);
+      await setDoc(userRef, {
+        name,
+        email,
+        role: role || 'citizen',
+        upvotes_remaining: parseInt(import.meta.env.VITE_UPVOTES_PER_WEEK || '3'),
+        created_at: serverTimestamp()
+      });
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const loginWithGoogle = async () => {
+    try {
+      const provider = new GoogleAuthProvider();
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      
+      const userRef = doc(db, 'users', user.uid);
+      const userSnap = await getDoc(userRef);
+      if (!userSnap.exists()) {
+        await setDoc(userRef, {
+          name: user.displayName,
+          email: user.email,
+          role: 'citizen',
+          upvotes_remaining: parseInt(import.meta.env.VITE_UPVOTES_PER_WEEK || '3'),
+          created_at: serverTimestamp()
+        });
+      }
+    } catch (error) {
+      throw error;
+    }
+  };
+
   return {
     user,
     loading,
     sendOTP,
     verifyOTP,
-    logout
+    logout,
+    login,
+    register,
+    loginWithGoogle
   };
 };

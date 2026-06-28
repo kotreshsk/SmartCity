@@ -1,4 +1,4 @@
-const functions = require("firebase-functions");
+const functions = require("firebase-functions/v1");
 const admin = require("firebase-admin");
 const crypto = require("crypto");
 
@@ -28,7 +28,7 @@ exports.checkSLA = functions.pubsub.schedule("every 1 hours").onRun(async (conte
     batch.set(notificationRef, {
       type: "escalation",
       issue_id: doc.id,
-      message: \`Issue \${doc.id} has breached its SLA.\`,
+      message: `Issue ${doc.id} has breached its SLA.`,
       created_at: admin.firestore.FieldValue.serverTimestamp(),
       read: false,
       recipient_role: "admin"
@@ -39,7 +39,7 @@ exports.checkSLA = functions.pubsub.schedule("every 1 hours").onRun(async (conte
 
   if (count > 0) {
     await batch.commit();
-    console.log(\`Escalated \${count} overdue issues.\`);
+    console.log(`Escalated ${count} overdue issues.`);
   }
   return null;
 });
@@ -51,7 +51,7 @@ exports.generateIssueHash = functions.firestore
     const data = snap.data();
     
     // Create deterministic string to hash
-    const dataString = \`\${data.user_id}|\${data.location.lat}|\${data.location.lng}|\${data.description}|\${data.created_at.toMillis()}\`;
+    const dataString = `${data.user_id}|${data.location.lat}|${data.location.lng}|${data.description}|${data.created_at.toMillis()}`;
     
     const hash = crypto.createHash('sha256').update(dataString).digest('hex');
     
